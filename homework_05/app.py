@@ -12,6 +12,7 @@
 """
 from flask import Flask
 
+
 from views.webapp import webapp
 
 
