@@ -1,16 +1,15 @@
 {% extends 'base.html' %}
-{% from homework_05.views.endpoints import ENDPOINTS as endpoints %}
 {% block title %}
 Index
 {% endblock %}
 
-{%- block body %}
+{% block body -%}
 <h1>Страницы приложения:</h1>
 <p>
 <ul>
     {% for key, value in endpoints.items() %}
-    <li><a href="webapp.{{value}}">{{key}}</a></li>
+    <li><a href="{{ url_for('webapp.'+value)}}">{{key}}</a></li>
     {% endfor %}
 </ul>
 </p>
-{% endblock -%}
+{%- endblock %}

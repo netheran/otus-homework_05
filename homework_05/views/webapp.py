@@ -2,17 +2,17 @@ from flask import (
     Blueprint,
     render_template,
 )
-from views.endpoints import ENDPOINTS as endpoints
+from homework_05.views.endpoints import ENDPOINTS
 
 webapp = Blueprint("webapp", __name__)
 
 
-@webapp.get("/", endpoint=endpoints.get("Index"))
+@webapp.get("/", endpoint=ENDPOINTS.get("Index"))
 def index_view():
-    return render_template("app/index.html")
+    return render_template("app/index.html", endpoints=ENDPOINTS)
 
 
-@webapp.get("/about/", endpoint=endpoints.get("About"))
+@webapp.get("/about/", endpoint=ENDPOINTS.get("About"))
 def show_about():
     return render_template("app/about.html")
 
