@@ -13,7 +13,7 @@
 from flask import Flask
 
 
-from views.webapp import webapp
+from homework_05.views.webapp import webapp
 
 
 app = Flask(__name__)
@@ -21,3 +21,5 @@ app = Flask(__name__)
 app.register_blueprint(webapp, url_prefix="/")
 
 
+if __name__ == '__main__':
+    app.run(use_reloader=False)
