@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% from views.endpoints import ENDPOINTS as endpoints}
+{% from views.endpoints import ENDPOINTS as endpoints %}
 {% block title %}
 Index
 {% endblock %}
@@ -10,6 +10,7 @@ Index
 <ul>
     {% for key, value in endpoints.items() %}
     <li><a href="webapp.{{value}}">{{key}}</a></li>
+    {% endfor %}
 </ul>
 </p>
 {% endblock -%}
